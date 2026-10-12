@@ -1,0 +1,21 @@
+{
+  "dataset": "shelflife-sample-v1",
+  "description": "Hand-written questions about the bundled ShelfLife sample repository. relevant_files were labelled by the project author by reading the code; expected_keywords are strings that must appear in correct evidence. Questions with answerable=false have no supporting code and test abstention.",
+  "questions": [
+    {"id": "q01", "question": "How are user passwords hashed?", "relevant_files": ["app/auth.py"], "expected_keywords": ["pbkdf2", "sha256"], "answerable": true},
+    {"id": "q02", "question": "How are session tokens signed and checked for expiry?", "relevant_files": ["app/auth.py"], "expected_keywords": ["hmac", "exp"], "answerable": true},
+    {"id": "q03", "question": "Which API route lets a member log in?", "relevant_files": ["app/main.py"], "expected_keywords": ["/api/login"], "answerable": true},
+    {"id": "q04", "question": "Where is the database schema with the books, members and loans tables defined?", "relevant_files": ["app/database.py"], "expected_keywords": ["CREATE TABLE", "loans"], "answerable": true},
+    {"id": "q05", "question": "How is the late fee calculated when a book is returned?", "relevant_files": ["app/loans.py", "config.py"], "expected_keywords": ["LATE_FEE_PER_DAY"], "answerable": true},
+    {"id": "q06", "question": "What is the maximum number of active loans a member can have?", "relevant_files": ["config.py", "app/loans.py"], "expected_keywords": ["MAX_ACTIVE_LOANS"], "answerable": true},
+    {"id": "q07", "question": "How are overdue reminder emails sent?", "relevant_files": ["app/notifier.py"], "expected_keywords": ["smtplib", "overdue"], "answerable": true},
+    {"id": "q08", "question": "Which environment variable sets the SQLite database file path?", "relevant_files": ["config.py", "README.md"], "expected_keywords": ["SHELFLIFE_DB_PATH"], "answerable": true},
+    {"id": "q09", "question": "How does the browser client send a request to borrow a book?", "relevant_files": ["static/app.js"], "expected_keywords": ["borrowBook", "Bearer"], "answerable": true},
+    {"id": "q10", "question": "Where does the code use eval or run shell commands with shell=True?", "relevant_files": ["app/legacy.py"], "expected_keywords": ["eval", "shell=True"], "answerable": true},
+    {"id": "q11", "question": "When is a loan considered overdue?", "relevant_files": ["app/models.py"], "expected_keywords": ["is_overdue", "returned_on"], "answerable": true},
+    {"id": "q12", "question": "How does the API require authentication before borrowing a book?", "relevant_files": ["app/main.py"], "expected_keywords": ["authentication required", "current_member"], "answerable": true},
+    {"id": "q13", "question": "Which tests cover the late fee rule?", "relevant_files": ["tests/test_loans.py"], "expected_keywords": ["calculate_late_fee"], "answerable": true},
+    {"id": "q14", "question": "How is the available copy count updated when a book is returned?", "relevant_files": ["app/loans.py"], "expected_keywords": ["copies_available + 1"], "answerable": true},
+    {"id": "q15", "question": "How does the application process credit card payments through Stripe?", "relevant_files": [], "expected_keywords": [], "answerable": false}
+  ]
+}

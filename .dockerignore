@@ -1,0 +1,6 @@
+.venv
+.env
+.repopilot_data
+__pycache__
+.pytest_cache
+.git

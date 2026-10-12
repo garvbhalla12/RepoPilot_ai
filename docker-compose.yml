@@ -1,0 +1,12 @@
+services:
+  repopilot:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - repopilot_data:/data
+volumes:
+  repopilot_data:

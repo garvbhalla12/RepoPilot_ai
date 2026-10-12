@@ -1,0 +1,12 @@
+# Versions below were installed together and exercised by the test suite on Python 3.12
+# (sentence-transformers was NOT installable in the build sandbox; see README "Untested").
+# Target runtime: Python 3.11+.
+streamlit==1.65.0
+chromadb==1.5.9
+sentence-transformers>=3.0,<6
+pandas==3.0.2
+plotly==7.1.0
+python-dotenv==1.2.2
+ruff==0.17.0
+bandit==1.9.4
+pytest==9.1.1

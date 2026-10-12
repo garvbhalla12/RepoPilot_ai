@@ -1,0 +1,1 @@
+"""ShelfLife application package."""
